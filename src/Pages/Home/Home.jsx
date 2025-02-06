@@ -4,6 +4,7 @@ import About from "../../components/About/About";
 import Skills from "../../components/Skills/Skills";
 import Projects from "../../components/Projects/Projects";
 import Contact from "../../components/Contact/Contact";
+import { ScrollToTop } from "scroll-totop-button";
 
 const Home = () => {
   return (
@@ -13,6 +14,15 @@ const Home = () => {
       <Skills data-scroll></Skills>
       <Projects data-scroll></Projects>
       <Contact data-scroll></Contact>
+      <ScrollToTop
+        style={{
+          backgroundColor: "#ff014f",
+          color: "white",
+          borderRadius: "50%",
+          fontSize: "1.25rem",
+          // className:"margin-bottom:3px"
+        }}
+      />
     </div>
   );
 };

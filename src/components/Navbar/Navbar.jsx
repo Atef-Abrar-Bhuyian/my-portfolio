@@ -1,10 +1,19 @@
+import { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
+      setIsOpen(false); // Close menu after clicking a link
     }
+  };
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
   };
 
   const links = (
@@ -28,40 +37,39 @@ const Navbar = () => {
 
   return (
     <div className="navbar w-11/12 mx-auto border sticky top-0 mt-4 rounded-full text-white z-10 backdrop-blur-lg animate__animated animate__fadeInDown">
+      {/* Navbar Left */}
       <div className="navbar-start">
-        <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h8m-8 6h16"
-              />
-            </svg>
-          </div>
-          <ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
-          >
-            {links}
-          </ul>
+        {/* Mobile Menu Button */}
+        <div className="lg:hidden">
+          <button onClick={toggleMenu} className="btn btn-ghost text-2xl">
+            {isOpen ? <FaTimes /> : <FaBars />}
+          </button>
         </div>
-        <a className="btn bg-transparent border-none text-white hover:bg-transparent hover:text text-xl hover:text-[#ff014f]">
+
+        <a href="/" className="btn bg-transparent border-none text-xl text-white hover:bg-transparent hover:text-[#ff014f]">
           ᗩ.ᗩ.ᗷᕼᑌYIᗩᑎ
         </a>
       </div>
+
+      {/* Desktop Navigation */}
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
+
+      {/* Resume Button */}
       <div className="navbar-end mr-4">
-        <a className="btn nav-link">Resume</a>
+        <a className="bg-[#ff014f] text-white font-bold py-3 px-6 rounded-lg shadow-md hover:scale-105 transition-all   duration-300 glow-effect border-neon-glow shadow-neon skill-card cursor-pointer">
+          Resume
+        </a>
+      </div>
+
+      {/* Mobile Dropdown Menu */}
+      <div
+        className={`absolute top-12 left-6 bg-[#ff014f] z-20 shadow-lg rounded-xl p-5 transition-all duration-500 ease-in-out transform ${
+          isOpen ? "translate-y-0 opacity-100 scale-100" : "-translate-y-20 opacity-0 scale-95 pointer-events-none"
+        }`}
+      >
+        <ul className="flex flex-col items-center space-y-4 text-lg">{links}</ul>
       </div>
     </div>
   );

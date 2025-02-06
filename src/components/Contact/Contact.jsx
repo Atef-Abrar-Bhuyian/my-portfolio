@@ -4,6 +4,7 @@ import Globe from "globe.gl"; // Import the globe.gl library
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
 import { FiMail, FiPhone } from "react-icons/fi";
+import { FaWhatsappSquare } from "react-icons/fa";
 
 const Contact = () => {
   const handleSubmit = (e) => {
@@ -150,22 +151,25 @@ const Contact = () => {
           {/* Contact Info */}
           <div className="mt-8 text-center text-gray-300 space-y-4">
             <div className="flex items-center gap-2 text-lg">
-              <FiMail className="text-[#ff014f]" size={24} />
+             
               <a
                 href="mailto:abrarbhuyian8@gmail.com"
                 className="hover:text-[#ff014f] transition"
               >
                 abrarbhuyian8@gmail.com
               </a>
+              <FiMail className="text-[#ff014f]" size={24} />
             </div>
             <div className="flex items-center gap-2 text-lg">
-              <FiPhone className="text-[#ff014f]" size={24} />
+              
               <a
                 href="tel:+8801576408435"
                 className="hover:text-[#ff014f] transition"
               >
                 +880 157 640 7435
               </a>
+              <FiPhone className="text-[#ff014f]" size={24} /> /
+              <FaWhatsappSquare className="text-[#ff014f]" size={28} />
             </div>
           </div>
         </div>
