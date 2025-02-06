@@ -20,7 +20,7 @@ const HeroSection = () => {
               I love to build clean and user-friendly websites. Always learning,
               always improving!
             </p>
-            <div className="flex gap-6 mt-6">
+            <div className="flex gap-6 mt-6 items-center justify-center md:justify-start">
               <Link to={"https://github.com/Atef-Abrar-Bhuyian"}>
                 <FaGithub className="text-3xl hover:text-[#ff014f] hover:scale-125 transition-all duration-300" />
               </Link>

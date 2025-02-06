@@ -108,7 +108,7 @@ const Projects = () => {
         {projects?.map((project, index) => (
           <div
             key={index}
-            className="relative bg-transparent p-6 rounded-xl border border-[#ff014d2c] transition duration-300 overflow-hidden group cursor-pointer"
+            className="relative bg-transparent p-6 rounded-xl border border-[#ff014d2c] transition duration-300 overflow-hidden group cursor-pointer md:w-11/12 mx-auto"
           >
             <div className="relative rounded-lg overflow-hidden">
               <img

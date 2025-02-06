@@ -19,7 +19,7 @@ const Navbar = () => {
 
   return (
     <div className="navbar w-11/12 mx-auto border sticky top-0 mt-4 rounded-full text-white z-10 backdrop-blur-lg animate__animated animate__fadeInDown">
-      <div className="navbar-start ">
+      <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
