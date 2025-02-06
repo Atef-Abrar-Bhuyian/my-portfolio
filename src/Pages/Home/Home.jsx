@@ -9,10 +9,10 @@ const Home = () => {
   return (
     <div>
       <HeroSection data-scroll></HeroSection>
-      <About id="about" data-scroll></About>
-      <Skills id="skills" data-scroll></Skills>
-      <Projects id="projects" data-scroll></Projects>
-      <Contact id="contact" data-scroll></Contact>
+      <About data-scroll></About>
+      <Skills data-scroll></Skills>
+      <Projects data-scroll></Projects>
+      <Contact data-scroll></Contact>
     </div>
   );
 };

@@ -1,18 +1,27 @@
 
 const Navbar = () => {
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   const links = (
     <>
       <li className="group">
-        <a href="about" className="nav-link cursor-pointer">
+        <button onClick={() => scrollToSection("about")} className="nav-link cursor-pointer">
           About
-        </a>
+        </button>
       </li>
       <li className="group">
-        <a className="nav-link">Skills</a>
+        <button onClick={() => scrollToSection("skills")} className="nav-link">Skills</button>
       </li>
       <li className="group">
-        <a className="nav-link">Projects</a>
+        <button onClick={() => scrollToSection("projects")} className="nav-link">Projects</button>
+      </li>
+      <li className="group">
+        <button onClick={() => scrollToSection("contact")} className="nav-link">Contact</button>
       </li>
     </>
   );

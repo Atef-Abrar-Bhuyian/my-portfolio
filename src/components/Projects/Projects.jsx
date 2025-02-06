@@ -99,7 +99,7 @@ const Projects = () => {
   };
 
   return (
-    <div className="bg-gray-950 min-h-screen py-20 flex flex-col items-center text-white">
+    <div id="projects" className="bg-gray-950 min-h-screen py-20 flex flex-col items-center text-white">
       <Fade>
         <Heading heading={"Projects"}></Heading>
       </Fade>

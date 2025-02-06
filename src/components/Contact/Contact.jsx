@@ -75,7 +75,7 @@ const Contact = () => {
   }, []);
 
   return (
-    <div className="min-h-screen py-20 flex flex-col items-center text-white">
+    <div id="contact" className="min-h-screen py-20 flex flex-col items-center text-white">
       <div className="mt-6">
         <Heading heading={"Contact With Me"} />
       </div>
@@ -171,7 +171,7 @@ const Contact = () => {
         </div>
 
         {/* Globe Section */}
-        <div className="w-full md:w-1/2 flex flex-col items-center justify-center">
+        <div className="w-full md:w-1/2 flex flex-col items-center justify-center cursor-pointer">
           <div id="globeViz"></div>
         </div>
       </div>
