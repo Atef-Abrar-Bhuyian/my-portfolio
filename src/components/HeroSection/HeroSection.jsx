@@ -12,7 +12,7 @@ const HeroSection = () => {
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center relative">
           {/* Left Content */}
           <div className="lg:w-1/2 text-center md:text-left">
-          <Fade delay={500}>
+          <Fade triggerOnce={true} delay={500}>
             <p className="font-semibold text-2xl mb-6">Hi There! I am</p>
             <h1 className="text-4xl md:text-6xl font-bold mt-2 relative">
               Md. Atef Abrar Bhuyian 
@@ -44,7 +44,7 @@ const HeroSection = () => {
 
           {/* Right Image */}
           <div className="md:w-1/2 flex justify-center mt-10 md:mt-0 relative">
-          <Fade delay={500}>
+          <Fade triggerOnce={true} delay={500}>
             <h1 className="absolute text-3xl md:text-7xl ml-8 mt-10  font-bold text-[#ff014d17] text-center">
               𝕎𝔼𝔹 𝔻𝔼𝕍𝔼𝕃𝕆ℙ𝔼ℝ
             </h1>

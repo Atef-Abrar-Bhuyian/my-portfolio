@@ -1,24 +1,55 @@
 import React, { useState, useEffect } from "react";
 import Heading from "../Heading/Heading";
 import Globe from "globe.gl"; // Import the globe.gl library
+import emailjs from "@emailjs/browser";
+import Swal from "sweetalert2";
+import { FiMail, FiPhone } from "react-icons/fi";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Form submitted!");
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const message = form.message.value;
+
+    const templateParams = {
+      from_name: name,
+      form_email: email,
+      to_name: "Atef Abrar Bhuyian",
+      form_message: message,
+    };
+
+    // Sene the email using Ernai2JS
+    emailjs
+      .send(
+        import.meta.env.VITE_serviceId,
+        import.meta.env.VITE_templateId,
+        templateParams,
+        import.meta.env.VITE_publicKey
+      )
+      .then((res) => {
+        Swal.fire({
+          title: "Message Sent Successfully!",
+          text: "Thank you for reaching out! I will get back to you as soon as possible.",
+          icon: "success",
+          color: "#fff",
+          background: "#030712", // Dark background color
+          confirmButtonColor: "#ff014f", // Custom confirm button color
+        });
+        e.target.reset();
+      })
+      .catch((err) => {
+        Swal.fire({
+          title: "Error!",
+          text: "Message was not sent! Please Try Again.",
+          icon: "error",
+          color: "#fff",
+          background: "#030712", // Dark background color
+          confirmButtonColor: "#ff014f", // Custom confirm button color
+        });
+        e.target.reset();
+      });
   };
 
   useEffect(() => {
@@ -49,9 +80,9 @@ const Contact = () => {
         <Heading heading={"Contact With Me"} />
       </div>
 
-      <div className="flex flex-col md:flex-row justify-center items-center w-11/12 mx-auto mt-12 gap-12">
+      <div className="flex flex-col lg:flex-row justify-center items-center w-11/12 mx-auto mt-12 gap-12">
         {/* Form Section */}
-        <div className="bg-gray-950 p-8 rounded-lg shadow-lg w-full md:w-1/2">
+        <div className="bg-gray-950 p-8 rounded-lg shadow-lg w-full lg:w-1/2">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="text-center text-4xl font-semibold text-gray-300">
               Send Me an Email
@@ -61,14 +92,13 @@ const Contact = () => {
                 htmlFor="name"
                 className="block text-sm font-semibold text-gray-300"
               >
-                Your Name
+                Your Name<sup>*</sup>
               </label>
               <input
                 type="text"
-                id="name"
                 name="name"
-                value={formData.name}
-                onChange={handleChange}
+                id="name"
+                required
                 className="w-full p-3 mt-2 bg-gray-800 border-2 border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-[#ff014f]"
                 placeholder="Your Name"
               />
@@ -79,14 +109,13 @@ const Contact = () => {
                 htmlFor="email"
                 className="block text-sm font-semibold text-gray-300"
               >
-                Your Email
+                Your Email<sup>*</sup>
               </label>
               <input
                 type="email"
-                id="email"
                 name="email"
-                value={formData.email}
-                onChange={handleChange}
+                id="email"
+                required
                 className="w-full p-3 mt-2 bg-gray-800 border-2 border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-[#ff014f]"
                 placeholder="Your Email"
               />
@@ -97,13 +126,12 @@ const Contact = () => {
                 htmlFor="message"
                 className="block text-sm font-semibold text-gray-300"
               >
-                Your Message
+                Your Message<sup>*</sup>
               </label>
               <textarea
-                id="message"
                 name="message"
-                value={formData.message}
-                onChange={handleChange}
+                id="message"
+                required
                 className="w-full p-3 mt-2 bg-gray-800 border-2 border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-[#ff014f]"
                 rows="4"
                 placeholder="Your Message"
@@ -117,10 +145,33 @@ const Contact = () => {
               Send Message
             </button>
           </form>
+          <div className="divider">OR</div>
+
+          {/* Contact Info */}
+          <div className="mt-8 text-center text-gray-300 space-y-4">
+            <div className="flex items-center gap-2 text-lg">
+              <FiMail className="text-[#ff014f]" size={24} />
+              <a
+                href="mailto:abrarbhuyian8@gmail.com"
+                className="hover:text-[#ff014f] transition"
+              >
+                abrarbhuyian8@gmail.com
+              </a>
+            </div>
+            <div className="flex items-center gap-2 text-lg">
+              <FiPhone className="text-[#ff014f]" size={24} />
+              <a
+                href="tel:+8801576408435"
+                className="hover:text-[#ff014f] transition"
+              >
+                +880 157 640 7435
+              </a>
+            </div>
+          </div>
         </div>
 
         {/* Globe Section */}
-        <div className="w-full md:w-1/2 flex justify-center">
+        <div className="w-full md:w-1/2 flex flex-col items-center justify-center">
           <div id="globeViz"></div>
         </div>
       </div>
