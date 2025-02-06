@@ -3,6 +3,7 @@ import myPicture from "../../assets/images/AtefAbrarBhuyian.png";
 import { FaFacebookSquare, FaGithub, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { FaSquareXTwitter } from "react-icons/fa6";
+import { Fade } from "react-awesome-reveal";
 
 const HeroSection = () => {
   return (
@@ -10,7 +11,8 @@ const HeroSection = () => {
       <section className=" text-white -screen flex items-center justify-center p-6 relative">
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center relative">
           {/* Left Content */}
-          <div className="lg:w-1/2 text-center md:text-left animate__animated animate__fadeInLeft animate__delay-1s">
+          <div className="lg:w-1/2 text-center md:text-left">
+          <Fade delay={500}>
             <p className="font-semibold text-2xl mb-6">Hi There! I am</p>
             <h1 className="text-4xl md:text-6xl font-bold mt-2 relative">
               Md. Atef Abrar Bhuyian 
@@ -37,14 +39,17 @@ const HeroSection = () => {
             <button className="bg-[#ff014f] text-white font-bold py-3 px-6 rounded-lg shadow-md hover:scale-105 transition-all duration-300 glow-effect border-neon-glow shadow-neon mt-6 skill-card">
               My Resume
             </button>
+          </Fade>
           </div>
 
           {/* Right Image */}
-          <div className="md:w-1/2 flex justify-center mt-10 md:mt-0 relative animate__animated animate__fadeInRight animate__delay-1s">
-            <h1 className="absolute text-7xl font-bold text-[#ff014d17] text-center">
+          <div className="md:w-1/2 flex justify-center mt-10 md:mt-0 relative">
+          <Fade delay={500}>
+            <h1 className="absolute text-3xl md:text-7xl ml-8 mt-10  font-bold text-[#ff014d17] text-center">
               𝕎𝔼𝔹 𝔻𝔼𝕍𝔼𝕃𝕆ℙ𝔼ℝ
             </h1>
             <img src={myPicture} alt="Web Designer" className="relative" />
+          </Fade>
           </div>
         </div>
       </section>

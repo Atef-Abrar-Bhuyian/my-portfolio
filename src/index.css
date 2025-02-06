@@ -4,6 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 body{
   scroll-behavior: smooth;
 }
@@ -96,3 +97,4 @@ body{
         .shadow-neon {
           box-shadow: 0 0 12px #ff014d;
         }
+

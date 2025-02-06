@@ -37,7 +37,7 @@ const skills = [
 
 const Skills = () => {
   return (
-    <div className="relative max-w-5xl mx-auto px-4 py-10">
+    <div className="relative max-w-5xl mx-auto px-4 py-20">
       {/* Glowing effect */}
       <div className="absolute inset-0 flex justify-center items-center">
         <div className="w-80 h-80 bg-[#ff014d75] blur-3xl opacity-30 rounded-full"></div>
