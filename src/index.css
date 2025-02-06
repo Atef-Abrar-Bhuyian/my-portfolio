@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 body{
   scroll-behavior: smooth;
@@ -83,7 +84,7 @@ body{
 
   .text-neon {
           color: #ff014d;
-          text-shadow: 0 0 8px #ff014d;
+          text-shadow: 0 0 5px #ff014d;
         }
         .glow-effect {
           box-shadow: 0 0 10px #ff014d, 0 0 40px #ff014d;
@@ -93,5 +94,5 @@ body{
           box-shadow: 0 0 5px #ff014d;
         }
         .shadow-neon {
-          box-shadow: 0 0 20px #ff014d;
+          box-shadow: 0 0 12px #ff014d;
         }

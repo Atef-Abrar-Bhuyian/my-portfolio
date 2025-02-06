@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa";
 import { IoLogoFirebase } from "react-icons/io5";
 import { SiMongodb, SiTailwindcss, SiExpress } from "react-icons/si";
+import Heading from "../Heading/Heading";
 
 const skills = [
   { name: "HTML5", icon: <FaHtml5 className="text-orange-500 text-5xl" /> },
@@ -43,9 +44,7 @@ const Skills = () => {
       </div>
 
       <Fade>
-        <h2 className="relative text-5xl primary-color font-bold text-center text-gray-800 mb-10">
-          Skillsets
-        </h2>
+        <Heading heading={"Skills"}></Heading>
       </Fade>
       <Fade delay={500} triggerOnce={true}>
         <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
