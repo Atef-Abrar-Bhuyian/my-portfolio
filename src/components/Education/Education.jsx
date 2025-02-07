@@ -6,7 +6,7 @@ import { FaLocationDot } from "react-icons/fa6";
 
 const Education = () => {
   return (
-    <div id="education" className="relative max-w-5xl mx-auto px-4 pt-20">
+    <div id="education" className="relative max-w-5xl mx-auto px-4 pt-20 text-white">
       {/* Glowing effect */}
       <div className="absolute inset-0 flex justify-center items-center mt-52">
         <div className="w-80 h-80 bg-[#ff014d75] blur-3xl opacity-30 rounded-full"></div>
@@ -18,7 +18,7 @@ const Education = () => {
 
       <div className="flex flex-wrap justify-center gap-6 mt-8">
         {/* University */}
-        <div className="flex flex-col items-center justify-center p-6 bg-transparent backdrop-blur-md rounded-2xl shadow-md transform transition-transform hover:scale-105 cursor-pointer hover:backdrop-blur-lg border-[#ff014d21] border hover:rotate-3 hover:shadow-sm hover:shadow-[#ff014f] skill-card relative overflow-hidden text-center">
+        <div className="bg-gray-950 flex flex-col items-center justify-center p-6 backdrop-blur-md rounded-2xl shadow-md transform transition-transform hover:scale-105 cursor-pointer hover:backdrop-blur-lg border-[#ff014d21] border hover:rotate-3 hover:shadow-sm hover:shadow-[#ff014f] skill-card relative overflow-hidden text-center">
           <FaUniversity className="text-4xl text-[#ff014f]" />
           <p className="mt-3 text-lg font-semibold text-white">
             B.Sc in Computer Science And Engineering
@@ -33,7 +33,7 @@ const Education = () => {
         </div>
 
         {/* School */}
-        <div className="flex flex-col items-center justify-center p-6 bg-transparent backdrop-blur-md rounded-2xl shadow-md transform transition-transform hover:scale-105 cursor-pointer hover:backdrop-blur-lg border-[#ff014d21] border hover:rotate-3 hover:shadow-sm hover:shadow-[#ff014f] skill-card relative overflow-hidden text-center">
+        <div className="flex flex-col items-center justify-center p-6 bg-gray-950  backdrop-blur-md rounded-2xl shadow-md transform transition-transform hover:scale-105 cursor-pointer hover:backdrop-blur-lg border-[#ff014d21] border hover:rotate-3 hover:shadow-sm hover:shadow-[#ff014f] skill-card relative overflow-hidden text-center">
           <FaSchool className="text-4xl text-[#ff014f]" />
           <p className="mt-3 text-lg font-semibold text-white">
             Higher Secondary School
