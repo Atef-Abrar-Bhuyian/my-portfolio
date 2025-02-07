@@ -39,7 +39,7 @@ const Skills = () => {
   return (
       <div id="skills" className="relative max-w-5xl mx-auto px-4 py-20">
       {/* Glowing effect */}
-      <div className="absolute inset-0 flex justify-center items-center">
+      <div className="absolute inset-0 flex justify-center items-center mt-40">
         <div className="w-80 h-80 bg-[#ff014d75] blur-3xl opacity-30 rounded-full"></div>
       </div>
 
@@ -54,7 +54,7 @@ const Skills = () => {
               className="flex flex-col items-center justify-center p-5 bg-transparent backdrop-blur-md rounded-2xl shadow-md transform transition-transform hover:scale-105 cursor-pointer hover:backdrop-blur-lg border-[#ff014d21] border hover:rotate-3 hover:shadow-sm hover:shadow-[#ff014f] skill-card relative overflow-hidden"
             >
               {skill.icon}
-              <p className="mt-3 text-lg font-semibold text-gray-800 dark:text-white">
+              <p className="mt-3 text-lg font-semibold text-white">
                 {skill.name}
               </p>
             </div>

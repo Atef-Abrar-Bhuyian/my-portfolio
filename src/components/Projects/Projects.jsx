@@ -22,6 +22,7 @@ const Projects = () => {
         "Tailwind CSS",
         "DaisyUI",
         "React Router",
+        "JWT",
         "Axios",
         "TanStackQuery",
         "Firebase",
@@ -45,6 +46,7 @@ const Projects = () => {
         "Tailwind CSS",
         "React Flowbite",
         "React Router",
+        "JWT",
         "Axios",
         "Firebase",
         "Stripe",
@@ -80,7 +82,13 @@ const Projects = () => {
       title: "ChillGamer",
       description:
         "ChillGamer is a game review platform where users can explore games, share their reviews, and build their wishlist. Users can submit, edit, and manage their reviews while discovering what others think about their favorite games. The platform offers an engaging, user-friendly experience for tracking and updating game preferences.",
-      techStack: ["React", "Tailwind CSS", "Firebase"],
+      techStack: [
+        "React",
+        "Tailwind CSS",
+        "DaisyUI",
+        "React Router",
+        "Firebase",
+      ],
       liveLink: "https://chill-gamer-d4be4.web.app/",
       githubLink: "https://github.com/Atef-Abrar-Bhuyian/Chill-Gamer-Client",
       challenges:
@@ -99,7 +107,10 @@ const Projects = () => {
   };
 
   return (
-    <div id="projects" className="bg-gray-950 min-h-screen py-20 flex flex-col items-center text-white">
+    <div
+      id="projects"
+      className="bg-gray-950 min-h-screen py-20 flex flex-col items-center text-white"
+    >
       <Fade>
         <Heading heading={"Projects"}></Heading>
       </Fade>

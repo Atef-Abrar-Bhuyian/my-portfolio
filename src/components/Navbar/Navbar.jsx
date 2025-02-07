@@ -24,6 +24,9 @@ const Navbar = () => {
         </button>
       </li>
       <li className="group">
+        <button onClick={() => scrollToSection("education")} className="nav-link">Education</button>
+      </li>
+      <li className="group">
         <button onClick={() => scrollToSection("skills")} className="nav-link">Skills</button>
       </li>
       <li className="group">
