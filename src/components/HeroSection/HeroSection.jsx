@@ -34,7 +34,7 @@ const HeroSection = () => {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://www.linkedin.com/in/atef-abrar-62a7a4264/"
+                  href="https://www.linkedin.com/in/atef-abrar-bhuyian"
                 >
                   <FaLinkedin className="text-3xl hover:text-[#ff014f] hover:scale-125 transition-all duration-300" />
                 </a>

@@ -50,7 +50,7 @@ const Navbar = () => {
         </div>
 
         <a href="/" className="btn bg-transparent border-none text-xl text-white hover:bg-transparent hover:text-[#ff014f]">
-          ᗩ.ᗩ.ᗷᕼᑌYIᗩᑎ
+          ᗩ.ᗩ.ᗷᕼᑌYIᗩᑎ"
         </a>
       </div>
 
