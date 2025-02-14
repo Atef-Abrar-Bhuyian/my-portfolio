@@ -53,7 +53,21 @@ const HeroSection = () => {
                   <FaFacebookSquare className="text-3xl hover:text-[#ff014f] hover:scale-125 transition-all duration-300" />
                 </a>
               </div>
-              <button className="bg-[#ff014f] text-white font-bold py-3 px-6 rounded-lg shadow-md hover:scale-105 transition-all duration-300 glow-effect border-neon-glow shadow-neon mt-6 skill-card">
+              <button
+                onClick={() => {
+                  const resumeUrl = "/Md.-Atef-Abrar-Bhuyian-Resume.pdf";
+                  const link = document.createElement("a");
+                  link.href = resumeUrl;
+                  link.setAttribute(
+                    "download",
+                    "Md.-Atef-Abrar-Bhuyian-Resume.pdf"
+                  );
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
+                className="bg-[#ff014f] text-white font-bold py-3 px-6 rounded-lg shadow-md hover:scale-105 transition-all duration-300 glow-effect border-neon-glow shadow-neon mt-6 skill-card"
+              >
                 My Resume
               </button>
             </Fade>
