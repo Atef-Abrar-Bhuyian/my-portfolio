@@ -80,7 +80,7 @@ const Navbar = () => {
       </div>
 
       {/* Resume Button */}
-      <div className="navbar-end mr-4">
+      <div className="navbar-end mr-4 hidden justify-end md:flex">
         <button
           onClick={() => {
             const resumeUrl = "/Md.-Atef-Abrar-Bhuyian-Resume.pdf";
