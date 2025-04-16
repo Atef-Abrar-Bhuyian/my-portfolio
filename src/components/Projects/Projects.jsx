@@ -4,6 +4,8 @@ import bistroBoss from "../../assets/projectsImages/bistroboss.png";
 import smartTrack from "../../assets/projectsImages/smartTrack.png";
 import volunVibe from "../../assets/projectsImages/volunvibe.png";
 import chillGamer from "../../assets/projectsImages/chillGamer.png";
+import Abryonix from "../../assets/projectsImages/abryionix.png";
+import brainZap from "../../assets/projectsImages/brainZap.png";
 import "animate.css";
 import Heading from "../Heading/Heading";
 
@@ -12,6 +14,31 @@ const Projects = () => {
   const [isClosing, setIsClosing] = useState(false);
 
   const projects = [
+    {
+      image: brainZap,
+      title: "BrainZap (Ongoing Project)",
+      description:
+        "Built with team CodeXplorers, BrainZap is a dynamic quiz-based learning platform designed to challenge users with AI-generated programming quizzes. Users receive instant results, track progress, and enhance their coding skills. The platform features interactive UI, real-time quiz feedback, and a subscription plan for advanced quiz packs.",
+      techStack: [
+        "React",
+        "axios",
+        "Gemini AI",
+        "Stripe",
+        "Shadcn",
+        "Tailwind CSS",
+        "Firebase",
+        "graphQL",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+      ],
+      liveLink: "https://brain-zap-99226.web.app/",
+      githubLink: "https://github.com/CodeXplorers-PH/brain-zap-client",
+      challenges:
+        "Building the AI feedback loop and integrating user response analysis in real-time was challenging. It required optimizing backend services and managing large sets of quiz data efficiently while ensuring a smooth user experience.",
+      improvements:
+        "The next goal is to implement leaderboards, topic-wise quiz filtering, and custom quiz creation for educators to tailor content to their students.",
+    },
     {
       image: bistroBoss,
       title: "BistroBoss",
@@ -57,6 +84,28 @@ const Projects = () => {
         "Managing team members and asset allocation for each team was a significant challenge. Ensuring accurate tracking of team member roles, responsibilities, and the distribution of assets required a robust system to prevent errors and mismanagement. Implementing efficient data structures and workflows to streamline the process while maintaining real-time updates and smooth coordination between teams was key to overcoming this challenge.",
       improvements:
         "My future plan is to implement a Kanban Board for Task Management, allowing users to easily track tasks across different stages (To-Do, In Progress, Done) with a drag-and-drop interface for seamless task management.",
+    },
+    {
+      image: Abryonix,
+      title: "Abryonix",
+      description:
+        "Abryonix is an AI image generation website where users can create high-quality visuals using prompts. It features personalized galleries, user authentication, and secure payments for premium access. The app integrates ClipDrop for image generation and Gemini AI for smart prompt enhancement, offering a seamless creative experience.",
+      techStack: [
+        "ClipDrop AI",
+        "Gemini AI",
+        "React",
+        "Tailwind CSS",
+        "Firebase Auth",
+        "MongoDB",
+        "Express.js",
+        "Node.js",
+      ],
+      liveLink: "https://abryonix-a11e5.web.app/",
+      githubLink: "https://github.com/Atef-Abrar-Bhuyian/Abryonix-Client",
+      challenges:
+        "One major challenge was ensuring fast and accurate image generation while keeping the UI responsive. Managing API rate limits and optimizing the user flow for prompt submission and result viewing took multiple iterations.",
+      improvements:
+        "Planned features include community sharing, prompt templates, and advanced customization tools like style filters and upscaling options to enhance creative control.",
     },
     {
       image: volunVibe,

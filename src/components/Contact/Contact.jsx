@@ -5,6 +5,7 @@ import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
 import { FiMail, FiPhone } from "react-icons/fi";
 import { FaWhatsappSquare } from "react-icons/fa";
+import { Fade } from "react-awesome-reveal";
 
 const Contact = () => {
   const handleSubmit = (e) => {
@@ -76,9 +77,14 @@ const Contact = () => {
   }, []);
 
   return (
-    <div id="contact" className="min-h-screen py-20 flex flex-col items-center text-white">
+    <div
+      id="contact"
+      className="min-h-screen py-20 flex flex-col items-center text-white"
+    >
       <div className="mt-6">
-        <Heading heading={"Contact With Me"} />
+        <Fade>
+          <Heading heading={"Contact With Me"} />
+        </Fade>
       </div>
 
       <div className="flex flex-col lg:flex-row justify-center items-center w-11/12 mx-auto mt-12 gap-12">
@@ -151,7 +157,6 @@ const Contact = () => {
           {/* Contact Info */}
           <div className="mt-8 text-center text-gray-300 space-y-4">
             <div className="flex items-center gap-2 text-lg">
-             
               <a
                 href="mailto:abrarbhuyian8@gmail.com"
                 className="hover:text-[#ff014f] transition"
@@ -161,7 +166,6 @@ const Contact = () => {
               <FiMail className="text-[#ff014f]" size={24} />
             </div>
             <div className="flex items-center gap-2 text-lg">
-              
               <a
                 href="tel:+8801576408435"
                 className="hover:text-[#ff014f] transition"
