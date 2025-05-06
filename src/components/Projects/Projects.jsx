@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Fade } from "react-awesome-reveal";
-import bistroBoss from "../../assets/projectsImages/bistroboss.png";
+import bistroBoss from "../../assets/projectsImages/bistroBoss.png";
 import smartTrack from "../../assets/projectsImages/smartTrack.png";
-import volunVibe from "../../assets/projectsImages/volunvibe.png";
+import volunVibe from "../../assets/projectsImages/volunVibe.png";
 import chillGamer from "../../assets/projectsImages/chillGamer.png";
-import Abryonix from "../../assets/projectsImages/abryionix.png";
+import Abryonix from "../../assets/projectsImages/abryonix.png";
 import brainZap from "../../assets/projectsImages/brainZap.png";
 import "animate.css";
 import Heading from "../Heading/Heading";
