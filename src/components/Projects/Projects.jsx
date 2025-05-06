@@ -8,6 +8,7 @@ import Abryonix from "../../assets/projectsImages/abryonix.png";
 import brainZap from "../../assets/projectsImages/brainZap.png";
 import "animate.css";
 import Heading from "../Heading/Heading";
+import { FaGithub, FaLink } from "react-icons/fa";
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -16,28 +17,52 @@ const Projects = () => {
   const projects = [
     {
       image: brainZap,
-      title: "BrainZap (Ongoing Project)",
+      title: "BrainZap - Ongoing Project",
       description:
-        "Built with team CodeXplorers, BrainZap is a dynamic quiz-based learning platform designed to challenge users with AI-generated programming quizzes. Users receive instant results, track progress, and enhance their coding skills. The platform features interactive UI, real-time quiz feedback, and a subscription plan for advanced quiz packs.",
+        "Built by team CodeXplorers, BrainZap is an AI-powered quiz platform designed for all types of learners. Users can create personalized quizzes on any topic, receive instant AI feedback, and track their progress over time. The platform features leaderboards, quiz history, quiz achievements, topic-based filtering, and a streak system to keep users engaged. A dedicated admin dashboard provides full control over platform management. BrainZap supports three user tiers—Free, Pro, and Elite—each offering unique features. Pro and Elite members gain access to premium quiz packs and ZapAI, an intelligent chatbot for learning support.",
       techStack: [
         "React",
-        "axios",
-        "Gemini AI",
-        "Stripe",
         "Shadcn",
         "Tailwind CSS",
         "Firebase",
-        "graphQL",
         "Node.js",
         "Express.js",
         "MongoDB",
+        "JWT",
+        "TanStack Query",
+        "GraphQL",
+        "Gemini AI",
+        "Stripe",
+        "Axios",
       ],
       liveLink: "https://brain-zap-99226.web.app/",
       githubLink: "https://github.com/CodeXplorers-PH/brain-zap-client",
       challenges:
-        "Building the AI feedback loop and integrating user response analysis in real-time was challenging. It required optimizing backend services and managing large sets of quiz data efficiently while ensuring a smooth user experience.",
+        "Creating a system that lets users generate quizzes on different topics and skill levels was challenging. We had to make sure the questions were accurate, not repeated, and matched the user’s level, which needed smart logic on both the frontend and backend.",
       improvements:
-        "The next goal is to implement leaderboards, topic-wise quiz filtering, and custom quiz creation for educators to tailor content to their students.",
+        "In the future, we plan to make BrainZap even more fun and engaging. We will add a 1v1 quiz battle feature where users can challenge each other in real-time and compete to see who scores higher. This will bring a more interactive and competitive experience to the platform. We also plan to introduce event-based quizzes—these will be special quizzes based on trending topics, seasons, or occasions, available for a limited time. Users can join these events to test their knowledge and win rewards. These features will help keep the learning experience fresh and exciting.",
+      teamMembers: [
+        {
+          name: "AJM Fajlay Rabby",
+          github: "https://github.com/ornobaadi",
+          portfolio: "https://ornobaadi-1.web.app/",
+        },
+        {
+          name: "Shahid Hasan Rumon",
+          github: "https://github.com/rumon3-1416",
+          portfolio: "https://shahidhasanrumon.netlify.app/",
+        },
+        {
+          name: "Md Ahbabuzzaman",
+          github: "https://github.com/ahbab-zaman",
+          portfolio: "https://ahbab-portfolio.vercel.app/",
+        },
+        {
+          name: "Prapoo Rozario",
+          github: "https://github.com/PrapooRozario",
+          portfolio: "https://prapoo-rozario.vercel.app/",
+        },
+      ],
     },
     {
       image: bistroBoss,
@@ -161,7 +186,7 @@ const Projects = () => {
       className="bg-gray-950 min-h-screen py-20 flex flex-col items-center text-white"
     >
       <Fade>
-        <Heading heading={"Projects"}></Heading>
+        <Heading heading={"Projects"} />
       </Fade>
 
       <div className="relative w-11/12 grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -249,9 +274,54 @@ const Projects = () => {
             <h3 className="text-xl sm:text-2xl font-bold primary-color mb-3">
               Future Plans
             </h3>
-            <p className="text-gray-400 mb-4 text-sm sm:text-base">
+            <p className="text-gray-400 mb-4 text-sm sm:text-base text-justify">
               {selectedProject.improvements}
             </p>
+
+            {selectedProject.teamMembers &&
+              selectedProject.teamMembers.length > 0 && (
+                <div>
+                  <h3 className="text-xl sm:text-2xl font-bold primary-color mb-3">
+                    Team Members
+                  </h3>
+                  <div className="flex flex-wrap justify-center gap-4 mb-6">
+                    {selectedProject.teamMembers.map((member, index) => (
+                      <div
+                        key={index}
+                        className="flex flex-col items-center bg-transparent border border-neon-glow rounded-xl px-4 py-3 min-w-[150px]"
+                      >
+                        <p className="text-sm sm:text-base font-medium text-white">
+                          {member.name}
+                        </p>
+                        <div className="flex items-center gap-3 mt-2">
+                          {member.github && (
+                            <a
+                              href={member.github}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-white hover:text-red-600 transition-colors"
+                              title="GitHub"
+                            >
+                              <FaGithub size={20} />
+                            </a>
+                          )}
+                          {member.portfolio && (
+                            <a
+                              href={member.portfolio}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-white hover:text-red-600 transition-colors"
+                              title="Portfolio"
+                            >
+                              <FaLink size={20} />
+                            </a>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
 
             <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
               <a
