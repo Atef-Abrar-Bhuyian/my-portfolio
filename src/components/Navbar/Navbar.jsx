@@ -56,7 +56,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar w-11/12 mx-auto border sticky top-0 mt-4 rounded-full text-white z-10 backdrop-blur-lg animate__animated animate__fadeInDown">
+    <div className="navbar w-11/12 mx-auto border sticky top-0 z-10 rounded-full text-white  backdrop-blur-lg animate__animated animate__fadeInDown">
       {/* Navbar Left */}
       <div className="navbar-start">
         {/* Mobile Menu Button */}

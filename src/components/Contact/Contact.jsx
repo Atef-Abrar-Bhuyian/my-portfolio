@@ -170,7 +170,7 @@ const Contact = () => {
                 href="tel:+8801576408435"
                 className="hover:text-[#ff014f] transition"
               >
-                +880 157 640 7435
+                +880 157 640 8435
               </a>
               <FiPhone className="text-[#ff014f]" size={24} /> /
               <FaWhatsappSquare className="text-[#ff014f]" size={28} />
