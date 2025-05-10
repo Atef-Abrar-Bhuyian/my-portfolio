@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import bistroBoss from "../../assets/projectsImages/bistroBoss.png";
 import smartTrack from "../../assets/projectsImages/smartTrack.png";
 import volunVibe from "../../assets/projectsImages/volunVibe.png";
@@ -12,6 +12,10 @@ import Heading from "../../components/Heading/Heading";
 const AllProjects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [isClosing, setIsClosing] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const projects = [
     {

@@ -6,7 +6,13 @@ import Projects from "../../components/Projects/Projects";
 import Contact from "../../components/Contact/Contact";
 import { ScrollToTop } from "scroll-totop-button";
 import Education from "../../components/Education/Education";
-import { FaWhatsapp, FaEnvelope, FaPhone, FaComments, FaTimes } from "react-icons/fa";
+import {
+  FaWhatsapp,
+  FaEnvelope,
+  FaPhone,
+  FaComments,
+  FaTimes,
+} from "react-icons/fa";
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,7 +39,9 @@ const Home = () => {
         {/* Contact Options (WhatsApp, Email, Phone) */}
         <div
           className={`flex flex-col items-center gap-3 transition-all duration-500 ${
-            isOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5 scale-0"
+            isOpen
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-5 scale-0"
           }`}
         >
           <a
