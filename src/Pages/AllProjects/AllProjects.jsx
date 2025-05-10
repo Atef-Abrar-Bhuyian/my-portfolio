@@ -1,17 +1,14 @@
 import { useState } from "react";
-import { Fade } from "react-awesome-reveal";
 import bistroBoss from "../../assets/projectsImages/bistroBoss.png";
 import smartTrack from "../../assets/projectsImages/smartTrack.png";
 import volunVibe from "../../assets/projectsImages/volunVibe.png";
 import chillGamer from "../../assets/projectsImages/chillGamer.png";
 import Abryonix from "../../assets/projectsImages/abryonix.png";
 import brainZap from "../../assets/projectsImages/brainZap.png";
-import "animate.css";
-import Heading from "../Heading/Heading";
-import { FaGithub, FaLink } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Fade } from "react-awesome-reveal";
+import Heading from "../../components/Heading/Heading";
 
-const Projects = () => {
+const AllProjects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [isClosing, setIsClosing] = useState(false);
 
@@ -180,16 +177,14 @@ const Projects = () => {
       setIsClosing(false);
     }, 500); // Match duration of the closing animation
   };
-
   return (
     <div
       id="projects"
       className="bg-gray-950 min-h-screen py-20 flex flex-col items-center text-white"
     >
       <Fade>
-        <Heading heading={"Projects"} />
+        <Heading heading={"All Projects"} />
       </Fade>
-
       <div className="relative w-11/12 grid grid-cols-1 lg:grid-cols-2 gap-10">
         {projects?.map((project, index) => (
           <div
@@ -233,135 +228,126 @@ const Projects = () => {
           </div>
         ))}
       </div>
-      <div className="w-11/12 mx-auto flex justify-center lg:justify-end">
-        <Link
-          to={"projects"}
-          className="mt-6 w-fit flex justify-center px-6 py-2 text-white bg-transparent border rounded-full transition font-bold text-lg skill-card cursor-pointer"
-        >
-          See All Projects
-        </Link>
-      </div>
-
       {selectedProject && (
-        <div
-          className={`fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50 px-4 sm:px-0 
-    ${
-      isClosing
-        ? "animate__animated animate__fadeOut animate__faster"
-        : "animate__animated animate__fadeIn animate__faster"
-    }`}
-        >
-          <div className="bg-gray-900 p-4 sm:p-6 rounded-xl max-w-lg w-11/12 sm:w-auto text-white text-center relative animate__animated animate__zoomIn max-h-[90vh] overflow-y-auto">
-            <h2 className="text-2xl sm:text-4xl font-bold primary-color mb-4">
-              {selectedProject.title}
-            </h2>
-            <p className="text-gray-300 mb-4 text-justify text-sm sm:text-base">
-              {selectedProject.description}
-            </p>
-
-            <h3 className="text-xl sm:text-2xl font-bold primary-color mb-3">
-              Tech Stack
-            </h3>
-            <div className="flex flex-wrap justify-center gap-2 mb-4">
-              {selectedProject.techStack.map((tech, i) => (
-                <span
-                  key={i}
-                  className="text-xs sm:text-sm bg-transparent text-white px-3 sm:px-4 py-1 sm:py-2 rounded-full border border-neon-glow"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-
-            <h3 className="text-xl sm:text-2xl font-bold primary-color mb-3">
-              Challenges
-            </h3>
-            <p className="text-gray-400 mb-4 text-sm sm:text-base text-justify">
-              {selectedProject.challenges}
-            </p>
-
-            <h3 className="text-xl sm:text-2xl font-bold primary-color mb-3">
-              Future Plans
-            </h3>
-            <p className="text-gray-400 mb-4 text-sm sm:text-base text-justify">
-              {selectedProject.improvements}
-            </p>
-
-            {selectedProject.teamMembers &&
-              selectedProject.teamMembers.length > 0 && (
-                <div>
+              <div
+                className={`fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50 px-4 sm:px-0 
+          ${
+            isClosing
+              ? "animate__animated animate__fadeOut animate__faster"
+              : "animate__animated animate__fadeIn animate__faster"
+          }`}
+              >
+                <div className="bg-gray-900 p-4 sm:p-6 rounded-xl max-w-lg w-11/12 sm:w-auto text-white text-center relative animate__animated animate__zoomIn max-h-[90vh] overflow-y-auto">
+                  <h2 className="text-2xl sm:text-4xl font-bold primary-color mb-4">
+                    {selectedProject.title}
+                  </h2>
+                  <p className="text-gray-300 mb-4 text-justify text-sm sm:text-base">
+                    {selectedProject.description}
+                  </p>
+      
                   <h3 className="text-xl sm:text-2xl font-bold primary-color mb-3">
-                    Team Members
+                    Tech Stack
                   </h3>
-                  <div className="flex flex-wrap justify-center gap-4 mb-6">
-                    {selectedProject.teamMembers.map((member, index) => (
-                      <div
-                        key={index}
-                        className="flex flex-col items-center bg-transparent border border-neon-glow rounded-xl px-4 py-3 min-w-[150px]"
+                  <div className="flex flex-wrap justify-center gap-2 mb-4">
+                    {selectedProject.techStack.map((tech, i) => (
+                      <span
+                        key={i}
+                        className="text-xs sm:text-sm bg-transparent text-white px-3 sm:px-4 py-1 sm:py-2 rounded-full border border-neon-glow"
                       >
-                        <p className="text-sm sm:text-base font-medium text-white">
-                          {member.name}
-                        </p>
-                        <div className="flex items-center gap-3 mt-2">
-                          {member.github && (
-                            <a
-                              href={member.github}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-white hover:text-red-600 transition-colors"
-                              title="GitHub"
-                            >
-                              <FaGithub size={20} />
-                            </a>
-                          )}
-                          {member.portfolio && (
-                            <a
-                              href={member.portfolio}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-white hover:text-red-600 transition-colors"
-                              title="Portfolio"
-                            >
-                              <FaLink size={20} />
-                            </a>
-                          )}
-                        </div>
-                      </div>
+                        {tech}
+                      </span>
                     ))}
                   </div>
+      
+                  <h3 className="text-xl sm:text-2xl font-bold primary-color mb-3">
+                    Challenges
+                  </h3>
+                  <p className="text-gray-400 mb-4 text-sm sm:text-base text-justify">
+                    {selectedProject.challenges}
+                  </p>
+      
+                  <h3 className="text-xl sm:text-2xl font-bold primary-color mb-3">
+                    Future Plans
+                  </h3>
+                  <p className="text-gray-400 mb-4 text-sm sm:text-base text-justify">
+                    {selectedProject.improvements}
+                  </p>
+      
+                  {selectedProject.teamMembers &&
+                    selectedProject.teamMembers.length > 0 && (
+                      <div>
+                        <h3 className="text-xl sm:text-2xl font-bold primary-color mb-3">
+                          Team Members
+                        </h3>
+                        <div className="flex flex-wrap justify-center gap-4 mb-6">
+                          {selectedProject.teamMembers.map((member, index) => (
+                            <div
+                              key={index}
+                              className="flex flex-col items-center bg-transparent border border-neon-glow rounded-xl px-4 py-3 min-w-[150px]"
+                            >
+                              <p className="text-sm sm:text-base font-medium text-white">
+                                {member.name}
+                              </p>
+                              <div className="flex items-center gap-3 mt-2">
+                                {member.github && (
+                                  <a
+                                    href={member.github}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-white hover:text-red-600 transition-colors"
+                                    title="GitHub"
+                                  >
+                                    <FaGithub size={20} />
+                                  </a>
+                                )}
+                                {member.portfolio && (
+                                  <a
+                                    href={member.portfolio}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-white hover:text-red-600 transition-colors"
+                                    title="Portfolio"
+                                  >
+                                    <FaLink size={20} />
+                                  </a>
+                                )}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+      
+                  <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+                    <a
+                      href={selectedProject.liveLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 sm:px-5 py-2 bg-transparent text-white rounded-lg font-bold border skill-card w-full sm:w-auto text-sm sm:text-base"
+                    >
+                      Live Project
+                    </a>
+                    <a
+                      href={selectedProject.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 sm:px-5 py-2 bg-transparent text-white rounded-lg font-bold border skill-card w-full sm:w-auto text-sm sm:text-base"
+                    >
+                      GitHub
+                    </a>
+                  </div>
+      
+                  <button
+                    onClick={handleClose}
+                    className="mt-4 px-5 py-2 bg-[#ff014f] text-white rounded-lg font-bold skill-card w-full sm:w-auto text-sm sm:text-base"
+                  >
+                    Close
+                  </button>
                 </div>
-              )}
-
-            <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
-              <a
-                href={selectedProject.liveLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 sm:px-5 py-2 bg-transparent text-white rounded-lg font-bold border skill-card w-full sm:w-auto text-sm sm:text-base"
-              >
-                Live Project
-              </a>
-              <a
-                href={selectedProject.githubLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 sm:px-5 py-2 bg-transparent text-white rounded-lg font-bold border skill-card w-full sm:w-auto text-sm sm:text-base"
-              >
-                GitHub
-              </a>
-            </div>
-
-            <button
-              onClick={handleClose}
-              className="mt-4 px-5 py-2 bg-[#ff014f] text-white rounded-lg font-bold skill-card w-full sm:w-auto text-sm sm:text-base"
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      )}
+              </div>
+            )}
     </div>
   );
 };
 
-export default Projects;
+export default AllProjects;
