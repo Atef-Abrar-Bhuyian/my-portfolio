@@ -8,6 +8,7 @@ import brainZap from "../../assets/projectsImages/brainZap.png";
 import weatherX from "../../assets/projectsImages/weatherX.png";
 import { Fade } from "react-awesome-reveal";
 import Heading from "../../components/Heading/Heading";
+import { FaGithub, FaLink } from "react-icons/fa";
 
 const AllProjects = () => {
   const [selectedProject, setSelectedProject] = useState(null);

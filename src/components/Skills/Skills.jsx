@@ -1,4 +1,3 @@
-import React from "react";
 import { Fade } from "react-awesome-reveal";
 import {
   FaReact,
@@ -6,10 +5,12 @@ import {
   FaHtml5,
   FaCss3Alt,
   FaJsSquare,
+  FaBrain,
 } from "react-icons/fa";
 import { IoLogoFirebase } from "react-icons/io5";
-import { SiMongodb, SiTailwindcss, SiExpress } from "react-icons/si";
+import { SiMongodb, SiTailwindcss, SiExpress, SiGraphql } from "react-icons/si";
 import Heading from "../Heading/Heading";
+import { GrStripe } from "react-icons/gr";
 
 const skills = [
   { name: "HTML5", icon: <FaHtml5 className="text-orange-500 text-5xl" /> },
@@ -33,11 +34,20 @@ const skills = [
     name: "Firebase",
     icon: <IoLogoFirebase className="text-yellow-400 text-5xl" />,
   },
+  { name: "GraphQL", icon: <SiGraphql className="text-pink-500 text-5xl" /> },
+  {
+    name: "AI Integration",
+    icon: <FaBrain className="text-purple-600 text-5xl" />,
+  },
+  {
+    name: "Stripe Integration",
+    icon: <GrStripe className="text-indigo-600 text-5xl" />,
+  },
 ];
 
 const Skills = () => {
   return (
-      <div id="skills" className="relative max-w-5xl mx-auto px-4 py-20">
+    <div id="skills" className="relative max-w-5xl mx-auto px-4 py-20">
       {/* Glowing effect */}
       <div className="absolute inset-0 flex justify-center items-center mt-40">
         <div className="w-80 h-80 bg-[#ff014d75] blur-3xl opacity-30 rounded-full"></div>
@@ -62,7 +72,6 @@ const Skills = () => {
         </div>
       </Fade>
     </div>
-
   );
 };
 
